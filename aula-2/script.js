@@ -1,0 +1,71 @@
+let cargo = document.querySelector('.d-1-2 span')
+let descricao = document.querySelector('.d-1-4')
+let aviso = document.querySelector('.d-2')
+let lateral = document.querySelector('.d-1-right')
+let numeros = document.querySelector('.d-1-3')
+
+let telaInicio = document.querySelector('.tela-inicio')
+let telaFim = document.querySelector('.tela-fim')
+
+let etapaAtual = 0
+let numero = '';
+let votoBranco = false;
+
+document.querySelectorAll('.numeros .botoes--opcoes').forEach( (elemento) => 
+    elemento.addEventListener('click', (event) => { // arrow function
+        clicou(event.target.innerText)
+    })
+)
+
+function comecarEtapa() {
+    telaInicio.style.display = 'flex'
+    telaFim.style.display = 'none'
+    let etapa = etapas[etapaAtual]
+
+    let numeroHTML = ''
+    numero = ''
+    votoBranco = false
+
+    for (let i=0; i < etapa.numeros; i ++) {
+        if (i === 0) {
+            numeroHTML += '<div class="numero pisca"></div>'
+        } else {
+            numeroHTML += '<div class="numero"></div>'
+        }
+    }
+
+    cargo.innerHTML = etapa.titulo
+    descricao.innerHTML = ''
+    aviso.style.display = 'none'
+    lateral.innerHTML= ''
+    numeros.innerHTML = numeroHTML
+}
+
+function clicou(num) {
+    let elementoNumero = document.querySelector('.numero.pisca')
+    if (elementoNumero !== null) {
+        elementoNumero.innerHTML = num
+        numero = `${numero}${num}`
+        
+        elementoNumero.classList.remove('pisca')
+        if (elementoNumero.nextElementSibling !== null) {
+            elementoNumero.nextElementSibling.classList.add('pisca')
+        } else {
+            // atualiza 
+        }
+    }
+}
+
+function branco() {
+    numero = ''
+    votoBranco = true
+    aviso.style.display = 'block'
+    numeros.innerHTML = ''
+    descricao.innerHTML = '<div class="aviso--grande pisca"> VOTO EM BRANCO</div>'
+    lateral.innerHTML = ''
+}
+
+function corrige() {
+    comecarEtapa()
+}
+comecarEtapa()
