@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="urna">
+        <div class="tela tela-inicio">
+            <div class="d-1">
+                <div class="d-1-left">
+                    <div class="d-1-1">
+                        <span>SEU VOTO PARA</span>
+                    </div>
+                    <div class="d-1-2">
+                        <span>VEREADOR</span>
+                    </div>
+                    <div class="d-1-3">
+                        <div class="numero pisca"></div>
+                        <div class="numero"></div>
+                    </div>
+                    <div class="d-1-4">
+                        Nome: FULANO DE TAL<br/>
+                        Partido: QQQ<br/>
+                        Vice-Prefeito: BELTRANO DE TAL
+                    </div>
+                </div>
+                <div class="d-1-right">
+                    <div class="d-1-image">
+                        <img src="images/88.jpg" alt="" />Prefeito
+                    </div>
+                    <div class="d-1-image small">
+                        <img src="images/88_2.jpg" alt="" />Vice-Prefeito
+                    </div>
+                </div>
+            </div>
+            <div class="d-2">
+                Aperte a tela:<br/>
+                CONFIRMA para CONFIRMAR este voto<br/>
+                CORRIGE para REINICIAR este voto
+            </div>
+        </div>
+        <div class="tela tela-fim" style="display:none">
+            <div class="aviso--gigante pisca">FIM</div>
+        </div>
+        <div class="botoes">
+            <div class="botoes--linha numeros">
+                <div class="botoes--opcoes">1</div>
+                <div class="botoes--opcoes">2</div>
+                <div class="botoes--opcoes">3</div>
+            </div>
+            <div class="botoes--linha numeros">
+                <div class="botoes--opcoes">4</div>
+                <div class="botoes--opcoes">5</div>
+                <div class="botoes--opcoes">6</div>
+            </div>
+            <div class="botoes--linha numeros">
+                <div class="botoes--opcoes">7</div>
+                <div class="botoes--opcoes">8</div>
+                <div class="botoes--opcoes">9</div>
+            </div>
+            <div class="botoes--linha numeros">
+                <div class="botoes--opcoes">0</div>
+            </div>
+            <div class="botoes--linha">
+                <div class="botoes--opcoes botao--branco" onclick="branco()">BRANCO</div>
+                <div class="botoes--opcoes botao--corrige" onclick="corrige()">CORRIGE</div>
+                <div class="botoes--opcoes botao--confirma" onclick="confirma()">CONFIRMA</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="etapas.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
