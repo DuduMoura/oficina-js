@@ -7,10 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Endereços</h1>
+    <h2 >texto h2</h2>
     <label>Cep:</label>
-    <input type="text" id="zipcode" autocomplete="off">
+    <input type="number" id="zipcode" autocomplete="off">
+    <img src="" alt="">
     <br>
     <button id="search">Pesquisar</button>
+    <br>
+    <table>
+        <thead>
+          <tr>
+            <th>CEP</th>
+            <th>Rua</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>UF</th>
+          </tr>
+        </thead>
+        <tbody id="results">
+        </tbody>
+      </table>
     <script src="script.js"></script>
 </body>
 </html>
