@@ -104,4 +104,33 @@ function branco() {
 function corrige() {
     comecarEtapa()
 }
+let votos = []
+function confirma() {
+    let etapa = etapa[etapaAtual]
+    let votoConfirmado = false
+    if (votoBranco === true) {
+        votoConfirmado = true
+        votos.push({
+            etapa: etapa.titulo,
+            voto: 'branco'
+        })
+    } else if(numero.length === etapa.numeros) {
+        votoConfirmado = true
+        votos.push({
+            etapa: etapa.titulo,
+            voto: numero
+        })
+    }
+    if(votoConfirmado) {
+        etapaAtual++;
+        if(etapas[etapaAtual] !== undefined) {
+            comecarEtapa()
+        } else {
+            telaInicio.style.display = 'none'
+            telaFim.style.display = 'flex'
+            console.log(votos)
+        }
+    }
+}
+
 comecarEtapa()
