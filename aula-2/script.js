@@ -7,6 +7,9 @@ let numeros = document.querySelector('.d-1-3')
 let telaInicio = document.querySelector('.tela-inicio')
 let telaFim = document.querySelector('.tela-fim')
 
+let audioBotao = document.getElementById('botao-audio')
+let audioConfirma = document.getElementById('botao-confirma')
+
 let etapaAtual = 0
 let numero = '';
 let votoBranco = false;
@@ -42,6 +45,7 @@ function comecarEtapa() {
 }
 
 function clicou(num) {
+    audioBotao.play()
     let elementoNumero = document.querySelector('.numero.pisca')
     if (elementoNumero !== null) {
         elementoNumero.innerHTML = num
@@ -65,7 +69,6 @@ function atualizaInterface() {
             return false;
         }
     })
-
     if (candidato.length > 0) {
         candidato = candidato[0]
         aviso.style.display = 'block'
@@ -88,7 +91,7 @@ function atualizaInterface() {
         lateral.innerHTML = fotosHtml
     } else {
         aviso.style.display = 'block';
-        descricao.innertHTML = '<div class="aviso--grande pisca">VOTO NULO</div>'
+        descricao.innerHTML = '<div class="aviso--grande pisca">VOTO NULO</div>'
     }
 }
 
@@ -123,6 +126,7 @@ function confirma() {
     }
     if(votoConfirmado) {
         etapaAtual++;
+        audioConfirma.play()
         if(etapas[etapaAtual] !== undefined) {
             comecarEtapa()
         } else {
