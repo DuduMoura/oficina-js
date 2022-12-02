@@ -106,7 +106,7 @@ function corrige() {
 }
 let votos = []
 function confirma() {
-    let etapa = etapa[etapaAtual]
+    let etapa = etapas[etapaAtual]
     let votoConfirmado = false
     if (votoBranco === true) {
         votoConfirmado = true
